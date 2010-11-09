@@ -1,0 +1,31 @@
+﻿\documentclass[a4paper, final, twocolumn, enlargefirstpage=true]{scrlttr2}
+\usepackage{graphicx}
+\usepackage{microtype}
+\usepackage{supertabular}
+\usepackage{newcent}
+\usepackage[utf8]{inputenc}
+\setkomavar{fromname}{@Model.SenderName}
+\setkomavar{fromaddress}{@Latex.Display(Model.SenderAddress)}
+\setkomavar{signature}{@Model.SenderName}
+\setkomavar{date}{@Model.Date.ToShortDateString()}
+\setkomavar{subject}{Your Itinerary}
+\begin{document}
+%\addtolength{\textheight}{15mm}
+%\pagestyle{myheadings}
+
+\begin{letter}
+{@Model.RecipientFullName\\
+@Latex.Display(Model.RecipientAddress)}
+
+\opening{Dear @Model.RecipientName}
+Thanks for purchasing the hugely overpriced ticket for our lorem ipsum event. Below you can find a detailed Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum sed mollis lacus. Curabitur egestas lacinia iaculis. Mauris faucibus quam non leo tristique ut porta leo tincidunt. Morbi nec massa sed libero sollicitudin congue. Donec nulla sapien, porta ut pretium sit amet, laoreet ut velit. Quisque et nibh ac sem viverra dignissim.
+
+\begin{itemize}
+@foreach(var rover in @Model.Items)
+{
+	Latex.Emit(@"\item "); Latex.Display(rover);
+}
+\end{itemize}
+\closing{Best Regards,}
+\end{letter}
+\end{document}

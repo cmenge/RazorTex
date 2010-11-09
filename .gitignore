@@ -1,0 +1,48 @@
+# RazorTex .gitignore file
+# ignore binary output folders
+bin/
+obj/
+TestResults/
+
+# ignore binary files
+*.lib
+*.dll
+*.exe
+*.pdb
+
+# Ignore compressed files
+*.7z
+*.dmg
+*.gz
+*.bz
+*.bz2
+*.iso
+*.jar
+*.rar
+*.tar
+*.zip
+
+# logs
+*.log
+*.log.?
+
+# test results
+*.trx
+
+#user files
+*.user
+*.suo
+
+# ignore temporary, cache, backup
+*.bak
+*.cache
+
+# originals from merger
+*.orig
+*.less.debug.css
+
+# OS generated files
+.DS_Store?
+ehthumbs.db
+Icon?
+Thumbs.db

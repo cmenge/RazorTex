@@ -1,0 +1,4 @@
+﻿% This is a US address format. Doing this right for all countries is a lot of work...
+@Model.AddressLine1\\
+@Model.HouseNumber @Model.Street\\
+@Model.City, @Model.State @Model.ZipCode

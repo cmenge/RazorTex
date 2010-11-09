@@ -1,0 +1,1 @@
+\frac{@Model.Numerator.ToString("F2")}{@Model.Denominator.ToString("F2")} &= @Model.Result.ToString("F2") \\

@@ -1,0 +1,30 @@
+\documentclass[11pt, final, a4paper, twocolumn]{article}
+\usepackage{fancyhdr, ifpdf}
+\usepackage[utf8]{inputenc} 
+\usepackage{amsmath}
+\pagestyle{plain}
+
+\begin{document}
+\author{@Model.Author}
+\title{@Model.Title}
+\pagenumbering{roman}
+\setcounter{page}{1}
+\pagenumbering{arabic}
+\maketitle
+
+\section{Introduction}
+Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum sed mollis lacus. Curabitur egestas lacinia iaculis. Mauris faucibus quam non leo tristique ut porta leo tincidunt. Morbi nec massa sed libero sollicitudin congue. Donec nulla sapien, porta ut pretium sit amet, laoreet ut velit. Quisque et nibh ac sem viverra dignissim. In sagittis, dolor at mollis vestibulum, purus leo tristique augue, et eleifend ligula diam ac libero. Vivamus aliquam pretium risus vel fringilla. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras sodales mattis erat, a sollicitudin augue gravida ut. 
+
+@for(int i = 0; i < Model.Calculations.Count; i += 3)
+{
+	var temp = Model.Calculations.Skip(i).Take(3);
+	Latex.Emit(@"\begin{align*}");
+	foreach(var rover in temp) {
+		@Latex.Display(rover);
+	}
+	Latex.Emit(@"\end{align*}");
+}
+
+Quisque aliquet libero vitae neque cursus facilisis. Vestibulum mattis elementum rhoncus. Quisque facilisis velit ac tellus dapibus porttitor. In in sem diam. Nulla sollicitudin tristique velit, gravida pharetra leo porta quis. Nunc laoreet erat imperdiet justo scelerisque a imperdiet magna semper. Aenean ultrices faucibus eleifend. In at metus leo. Cras suscipit, dolor ut sagittis suscipit, felis dui elementum sem, imperdiet egestas velit metus tempus justo. Aliquam erat volutpat.
+
+\end{document}

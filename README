@@ -1,0 +1,5 @@
+RazorTex is a sample that shows how to use the Razor view engine to render
+something completely different - LaTeX files in this case.
+
+Those LaTeX files can be used to create high-quality PDFs on a server for 
+free, for example using the MiKTeX LaTeX distribution.
